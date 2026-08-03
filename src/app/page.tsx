@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Server, Database, Cloud, Terminal } from "lucide-react";
+import { ArrowRight, Server, Database, Cloud, Terminal, Cpu, Rocket, MonitorSmartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -99,33 +99,95 @@ export default function Home() {
           {[
             {
               role: "Software Developer",
-              company: "Current Role",
+              company: "ELRICS",
               date: "Present",
-              description: "Responsible for backend engineering, production deployments, server administration, infrastructure management, and technical team coordination. Managed Linux VPS servers, Nginx, PM2, Gunicorn, and Daphne.",
+              responsibilities: [
+                "Backend application development",
+                "REST API development",
+                "Database design",
+                "Linux server administration",
+                "Production deployments",
+                "CI/CD implementation",
+                "Infrastructure management",
+                "Application hosting",
+                "Technical team leadership",
+                "Server troubleshooting"
+              ],
               tech: ["Node.js", "Express", "Django", "Laravel", "PostgreSQL", "Linux"]
-            },
-            {
-              role: "Systems Administrator",
-              company: "Infrastructure",
-              date: "Previous / Ongoing",
-              description: "Managed complete application lifecycle, from setting up bare-metal servers to configuring SSL certificates and DNS management. Implemented GitHub Actions for robust CI/CD pipelines.",
-              tech: ["Nginx", "GitHub Actions", "SSL", "DNS", "MySQL", "Prisma ORM"]
             }
           ].map((exp, index) => (
             <motion.div key={index} variants={fadeIn} className="relative">
               <div className="absolute -left-10 w-4 h-4 rounded-full bg-background border-2 border-primary mt-1.5" />
-              <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 gap-2">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-2">
                 <h3 className="text-xl font-medium">{exp.role} <span className="text-muted-foreground">@ {exp.company}</span></h3>
                 <span className="text-sm text-muted-foreground font-mono">{exp.date}</span>
               </div>
-              <p className="text-muted-foreground mb-4 leading-relaxed">{exp.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {exp.tech.map((t) => (
-                  <Badge key={t} variant="secondary" className="bg-white/5 hover:bg-white/10 text-muted-foreground border border-white/10 font-medium">
-                    {t}
-                  </Badge>
+              <ul className="grid md:grid-cols-2 gap-x-4 gap-y-3 mb-8">
+                {exp.responsibilities.map((resp, i) => (
+                  <li key={i} className="text-muted-foreground flex items-start gap-3 text-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0 mt-1.5" />
+                    <span className="leading-relaxed">{resp}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Expertise / Skills Section */}
+      <motion.section 
+        id="skills"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={stagger}
+      >
+        <motion.h2 variants={fadeIn} className="text-2xl font-semibold mb-12 tracking-tight">Expertise</motion.h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              category: "Backend Engineering",
+              icon: Server,
+              skills: ["Node.js", "Express.js", "Django", "Laravel", "REST APIs"]
+            },
+            {
+              category: "Database",
+              icon: Database,
+              skills: ["PostgreSQL", "MySQL", "SQLite", "Prisma ORM"]
+            },
+            {
+              category: "Infrastructure",
+              icon: Cpu,
+              skills: ["Linux", "Nginx", "PM2", "Gunicorn", "Daphne"]
+            },
+            {
+              category: "Deployment",
+              icon: Rocket,
+              skills: ["GitHub Actions", "CI/CD", "VPS", "SSL", "DNS"]
+            },
+            {
+              category: "Frontend",
+              icon: MonitorSmartphone,
+              skills: ["Flutter", "Next.js", "Tailwind CSS", "JavaScript"]
+            }
+          ].map((skillGroup, index) => (
+            <motion.div key={index} variants={fadeIn} className="h-full">
+              <Card className="p-6 h-full bg-white/[0.02] hover:bg-white/[0.04] border-white/5 transition-colors">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                    <skillGroup.icon className="w-5 h-5 text-muted-foreground" />
+                  </div>
+                  <h3 className="text-lg font-medium">{skillGroup.category}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.skills.map((s) => (
+                    <Badge key={s} variant="secondary" className="bg-white/5 hover:bg-white/10 text-muted-foreground border border-white/10 font-medium">
+                      {s}
+                    </Badge>
+                  ))}
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
