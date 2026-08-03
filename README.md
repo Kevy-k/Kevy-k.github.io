@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# Kevin Koshy
 
-First, run the development server:
+### Software Developer
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Building scalable backend systems, managing production infrastructure, and delivering reliable software solutions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Portfolio](https://kevy-k.github.io) • [LinkedIn](https://www.linkedin.com/in/kevin-koshy-dev/) • [GitHub](https://github.com/Kevy-k)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🚧 **Portfolio Redesign in Progress**
 
-## Learn More
+I'm currently rebuilding my personal portfolio using **Next.js**, **TypeScript**, and **Tailwind CSS** to better showcase my professional experience in backend development, Linux server administration, production deployments, and technical leadership.
 
-To learn more about Next.js, take a look at the following resources:
+The new portfolio will feature:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 💻 Professional Experience
+- ⚙️ Backend Engineering
+- ☁️ Linux Infrastructure & Server Administration
+- 🚀 CI/CD & Production Deployments
+- 🧠 Engineering Projects
+- 📜 Certifications
+- 📫 Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Thank you for visiting! The updated portfolio will be available soon.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</div>
