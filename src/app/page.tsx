@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Server, Database, Cloud, Terminal, Cpu, Rocket, MonitorSmartphone } from "lucide-react";
+import { ArrowRight, Server, Database, Cloud, Terminal, Cpu, Rocket, MonitorSmartphone, Activity, CreditCard, HardDrive, GitMerge, MapPin, ShieldCheck, Network, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -193,7 +193,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Projects Section */}
+      {/* Featured Work Section */}
       <motion.section 
         id="projects"
         initial="initial"
@@ -201,36 +201,48 @@ export default function Home() {
         viewport={{ once: true, margin: "-100px" }}
         variants={stagger}
       >
-        <motion.h2 variants={fadeIn} className="text-2xl font-semibold mb-12 tracking-tight">Selected Work</motion.h2>
+        <motion.h2 variants={fadeIn} className="text-2xl font-semibold mb-12 tracking-tight">Featured Work</motion.h2>
         <div className="grid md:grid-cols-2 gap-6">
           {[
             {
-              title: "Scalable API Architecture",
-              description: "Developed robust backend applications and RESTful APIs, managing complex database interactions using Prisma ORM and Express.js.",
+              title: "Backend Engineering",
+              description: "Architecting and building robust, scalable server-side applications and secure APIs.",
               icon: Server,
-              tech: ["Node.js", "Express", "PostgreSQL", "Prisma"]
+              tech: ["REST API", "Auth", "Database Design", "Node.js", "Django", "Laravel"]
             },
             {
-              title: "Server Administration",
-              description: "Administered Linux VPS servers, configuring Nginx as a reverse proxy, and managing daemonized applications with PM2 and Gunicorn.",
-              icon: Database,
-              tech: ["Linux", "Nginx", "PM2", "Gunicorn"]
+              title: "Real-Time Systems",
+              description: "Implementing live, bi-directional communication channels for interactive application features.",
+              icon: Activity,
+              tech: ["WebSockets", "WebRTC", "Real-time sync"]
             },
             {
-              title: "Automated CI/CD Pipelines",
-              description: "Streamlined production deployments utilizing GitHub Actions. Handled DNS configurations and managed SSL certificates for secure web services.",
-              icon: Cloud,
-              tech: ["GitHub Actions", "DNS", "SSL/TLS"]
+              title: "Payment & Business Integrations",
+              description: "Connecting diverse third-party services and streamlining complex business workflows securely.",
+              icon: CreditCard,
+              tech: ["Payment Gateways", "3rd-Party APIs", "Workflow Automation"]
             },
             {
-              title: "Full-Stack Integrations",
-              description: "Engineered scalable, data-driven systems leveraging Django REST Framework and Laravel, ensuring seamless integration across web platforms.",
-              icon: Terminal,
-              tech: ["Django", "DRF", "Laravel", "MySQL"]
+              title: "Infrastructure & Deployment",
+              description: "Managing secure server environments, hosting setups, and domain configurations.",
+              icon: HardDrive,
+              tech: ["Linux", "Nginx", "PM2", "Gunicorn", "SSL", "DNS", "VPS"]
+            },
+            {
+              title: "DevOps & CI/CD",
+              description: "Automating software delivery pipelines to ensure reliable and rapid production releases.",
+              icon: GitMerge,
+              tech: ["GitHub Actions", "Deployment Pipelines", "Environment Config"]
+            },
+            {
+              title: "Advanced Application Features",
+              description: "Developing specialized features including geolocation services and resolving complex production bottlenecks.",
+              icon: MapPin,
+              tech: ["Geofencing", "GPS Tracking", "Performance Tuning"]
             }
           ].map((project, index) => (
-            <motion.div key={index} variants={fadeIn}>
-              <Card className="p-6 h-full bg-white/[0.02] hover:bg-white/[0.04] border-white/5 transition-colors flex flex-col group">
+            <motion.div key={index} variants={fadeIn} className="h-full">
+              <Card className="p-6 h-full bg-white/[0.02] hover:bg-white/[0.04] border-white/5 transition-colors flex flex-col group cursor-default">
                 <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
                   <project.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
@@ -240,7 +252,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((t) => (
-                    <span key={t} className="text-xs font-mono text-muted-foreground">
+                    <span key={t} className="text-xs font-mono text-muted-foreground bg-white/5 px-2 py-1 rounded border border-white/5">
                       {t}
                     </span>
                   ))}
@@ -251,25 +263,126 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Contact CTA */}
+      {/* Featured Projects Section */}
       <motion.section 
-        id="contact"
-        className="py-20 mb-20 text-center"
+        id="personal-projects"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
         variants={stagger}
       >
-        <motion.h2 variants={fadeIn} className="text-3xl font-semibold mb-4 tracking-tight">Let&apos;s build something.</motion.h2>
-        <motion.p variants={fadeIn} className="text-muted-foreground max-w-lg mx-auto mb-8">
-          Currently open for new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
-        </motion.p>
-        <motion.div variants={fadeIn}>
-          <Button size="lg" className="h-12 px-8 text-sm font-medium">
-            Say Hello
-          </Button>
-        </motion.div>
+        <motion.h2 variants={fadeIn} className="text-2xl font-semibold mb-12 tracking-tight">Featured Projects</motion.h2>
+        <div className="flex flex-col gap-8">
+          
+          {/* Project 1 */}
+          <motion.div variants={fadeIn}>
+            <Card className="p-8 bg-white/[0.02] hover:bg-white/[0.04] border-white/5 transition-colors group relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-32 bg-primary/5 rounded-full blur-3xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="grid lg:grid-cols-5 gap-8">
+                
+                {/* Left Column: Info & Overview */}
+                <div className="lg:col-span-3 flex flex-col">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-primary/30 transition-colors shrink-0">
+                      <ShieldCheck className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-semibold tracking-tight text-foreground">Kevrion</h3>
+                      <span className="text-sm font-mono text-muted-foreground">Cybersecurity • AI • Desktop Application</span>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+                    An AI-assisted desktop cybersecurity platform designed to help users understand malicious files. It performs line-by-line source code analysis using a custom LSTM model and generates natural language explanations to articulate exactly why a file is dangerous.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {["Flutter (Windows)", "FastAPI", "Python", "LSTM", "Gemini API", "MongoDB", "AES Encryption"].map((t) => (
+                      <span key={t} className="text-xs font-medium text-muted-foreground bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Column: Key Features */}
+                <div className="lg:col-span-2 flex flex-col justify-center">
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Key Features</h4>
+                  <ul className="space-y-3">
+                    {[
+                      "AI-powered line-by-line code analysis",
+                      "Custom-trained LSTM malware risk prediction",
+                      "Human-readable reports via Gemini API",
+                      "Live document & URL scanning",
+                      "AES encrypted password vault",
+                      "Offline file quarantine engine"
+                    ].map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
+                        <CheckCircle2 className="w-4 h-4 text-primary/70 shrink-0 mt-0.5" />
+                        <span className="leading-snug">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Project 2 */}
+          <motion.div variants={fadeIn}>
+            <Card className="p-8 bg-white/[0.02] hover:bg-white/[0.04] border-white/5 transition-colors group relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-32 bg-primary/5 rounded-full blur-3xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="grid lg:grid-cols-5 gap-8">
+                
+                {/* Left Column: Info & Overview */}
+                <div className="lg:col-span-3 flex flex-col">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-primary/30 transition-colors shrink-0">
+                      <Network className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-semibold tracking-tight text-foreground leading-tight mb-1">AI-Powered Predictive Auto-Scaling</h3>
+                      <span className="text-sm font-mono text-muted-foreground">Cloud Architecture • Distributed Systems • AI</span>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+                    A research-focused cloud architecture combining machine learning with infrastructure automation. It predicts workloads using an LSTM model to make intelligent auto-scaling decisions based on application demand, infrastructure budget, and estimated carbon emissions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {["Python", "FastAPI", "Docker", "Redis Streams", "LSTM", "Microservices"].map((t) => (
+                      <span key={t} className="text-xs font-medium text-muted-foreground bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Column: Key Features */}
+                <div className="lg:col-span-2 flex flex-col justify-center">
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Key Features</h4>
+                  <ul className="space-y-3">
+                    {[
+                      "Predictive auto-scaling via LSTM forecasting",
+                      "Docker-based microservices architecture",
+                      "Redis Streams telemetry processing",
+                      "Cost-aware & Carbon-aware scaling",
+                      "Simulated traffic generation for training",
+                      "CLI-based infrastructure control"
+                    ].map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
+                        <CheckCircle2 className="w-4 h-4 text-primary/70 shrink-0 mt-0.5" />
+                        <span className="leading-snug">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              </div>
+            </Card>
+          </motion.div>
+
+        </div>
       </motion.section>
+
     </div>
   );
 }
